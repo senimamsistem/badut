@@ -23,7 +23,7 @@ print("Script: " + script)
 Discord = "https://discord.gg/ZJJqQUdr6R"
 print("Discord: " + Discord)
 print("===========================================")
-print('PESAN DARI PEMBUAT : TIDAK UNTUK DI PERJUAL-BELIKAN BY: BG PATENG')
+print('PESAN DARI PEMBUAT : TIDAK UNTUK DI PERJUAL-BELIKAN')
 print("===========================================\n")
 
 time.sleep(1)
