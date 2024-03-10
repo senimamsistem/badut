@@ -35,6 +35,10 @@ python main.py
 # FOR PC
 
 ```
+apt install python3-pip
+```
+
+```
 apt update
 apt install python openssl
 ```
