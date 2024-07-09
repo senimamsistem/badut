@@ -1,0 +1,15 @@
+{
+    "name": "wallet-generator",
+    "version": "1.0.0",
+    "description": "Generate Ethereum wallets with mnemonic phrases",
+    "main": "index.js",
+    "scripts": {
+      "start": "node index.js"
+    },
+    "dependencies": {
+      "ethers": "^5.7.0",
+      "bip39": "^3.0.4",
+      "chalk": "^4.1.2"
+    }
+  }
+  
