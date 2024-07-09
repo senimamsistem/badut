@@ -1,0 +1,15 @@
+{
+    "name": "faucet-warden",
+    "version": "1.0.0",
+    "description": "Bot untuk mengirim pesan acak ke Discord",
+    "main": "index.js",
+    "scripts": {
+      "start": "node index.js"
+    },
+    "dependencies": {
+      "axios": "^0.21.1",
+      "colors": "^1.4.0",
+      "readline-sync": "^1.4.10"
+    }
+  }
+  
