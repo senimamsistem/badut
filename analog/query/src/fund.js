@@ -5,7 +5,7 @@ import { waitReady } from "@polkadot/wasm-crypto";
 import { walletConfig } from './config.js';
 import { extractFieldsFromSQL, convertToTOCKBaseUnits } from './utils.js';
 
-export async function executeQueryAndFund(hashId, name) {
+export async function executeQueryAndFund(hashId, name, amount) {
     await waitReady();
     const keyring = new Keyring({ type: "sr25519" });
 
@@ -71,7 +71,6 @@ export async function executeQueryAndFund(hashId, name) {
             }
         }
 
-        const amount = "0.02"; // Adjust this amount as needed
         const amountInBaseUnits = convertToTOCKBaseUnits(amount);
 
         const fundResponse = await client.tokenomics.sponsorView({
@@ -82,7 +81,10 @@ export async function executeQueryAndFund(hashId, name) {
         console.log('Funding Response:', fundResponse);
         console.log(`Status: ${fundResponse.status}`);
         console.log(`Transaction ID: ${fundResponse.transactionId || 'Not available'}`);
+        console.log(`Funded: ${fundResponse.amount}`);
+        console.log(`Funded At: ${new Date().toISOString()}`);
+        console.log(`Sponsor: ${walletConfig.addr}`);
     } catch (error) {
-        console.error(`Error processing account ${walletConfig.addr}:`, error);
+        console.error(`Error processing account ${walletConfig.addr}`, error);
     }
 }

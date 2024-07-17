@@ -1,3 +1,4 @@
+// src/logo.js
 import chalk from 'chalk';
 
 export function displayHeader() {

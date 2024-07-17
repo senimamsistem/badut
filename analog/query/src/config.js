@@ -1,4 +1,15 @@
-export const walletConfig = {
-    addr: "#ADDRESS",
-    phrase: "#phrase"
-};
+// src/config.js
+export const wallets = [
+    {
+        name: "NAMA-WALLET",
+        addr: "ADDRES",
+        phrase: "#PHASE"
+    }
+
+];
+
+export let walletConfig = {};
+
+export function setWalletConfig(selectedWallet) {
+    walletConfig = selectedWallet;
+}
