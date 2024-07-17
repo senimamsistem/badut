@@ -70,7 +70,8 @@ export async function executeQuery(hashId, name) {
                 console.error(`Error with fields ${fields.join(", ")}:`, error);
             }
         }
+
     } catch (error) {
-        console.error(`Error processing account ${walletConfig.addr}:`, error);
+        console.error(`Error processing account ${walletConfig.addr}`, error);
     }
 }
