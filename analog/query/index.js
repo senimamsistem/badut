@@ -10,8 +10,13 @@ async function promptUser() {
         type: 'list',
         name: 'selectedWalletName',
         message: 'Choose a wallet to use:',
-        choices: wallets.map(wallet => wallet.name)
+        choices: [...wallets.map(wallet => wallet.name), 'Exit']
     });
+
+    if (selectedWalletName === 'Exit') {
+        console.log('Exiting...');
+        process.exit();
+    }
 
     const selectedWallet = wallets.find(wallet => wallet.name === selectedWalletName);
     setWalletConfig(selectedWallet);
@@ -20,8 +25,13 @@ async function promptUser() {
         type: 'list',
         name: 'option',
         message: 'Do you want to run queries from file or manually?',
-        choices: ['From file', 'Manually']
+        choices: ['From file', 'Manually', 'Exit']
     });
+
+    if (option === 'Exit') {
+        console.log('Exiting...');
+        process.exit();
+    }
 
     if (option === 'From file') {
         try {
@@ -38,8 +48,13 @@ async function promptUser() {
             type: 'list',
             name: 'viewOption',
             message: 'Do you want to execute Only View or View & Fund?',
-            choices: ['Only View', 'View & Fund']
+            choices: ['Only View', 'View & Fund', 'Exit']
         });
+
+        if (viewOption === 'Exit') {
+            console.log('Exiting...');
+            process.exit();
+        }
 
         const { hashId } = await inquirer.prompt({
             type: 'input',
@@ -71,7 +86,9 @@ async function promptUser() {
 
 async function main() {
     displayHeader();
-    await promptUser();
+    while (true) {
+        await promptUser();
+    }
 }
 
 main();
