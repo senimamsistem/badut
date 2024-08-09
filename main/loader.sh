@@ -4,7 +4,7 @@ tput civis
 # Clear Line
 CL="\e[2K"
 # Spinner Character
-SPINNER="⠋⠙⠹⠸⠼⠴⠦⠧⠇⠏"
+SPINNER="◯ ◌ ◉ ◑"
 
 function spinner() {
   task=$1

@@ -5,7 +5,6 @@ export const wallets = [
         addr: "ADDRES",
         phrase: "#PHASE"
     }
-
 ];
 
 export let walletConfig = {};
